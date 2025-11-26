@@ -3,7 +3,9 @@ name: Update HackerRank Stats
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */6 * * *"  # every 6 hours
+    - cron: "0 */6 * * *"    # हर 6 घंटे बाद
+  push:
+    branches: [ main ]
 
 jobs:
   update:
@@ -18,13 +20,20 @@ jobs:
         with:
           node-version: 18
 
-      - name: Run Scraper
-        run: node .hackerrank/fetch_stats.js
+      - name: Run HackerRank Scraper
+        run: node .hackerrank/fetch.js
 
-      - name: Commit Changes
+      - name: Update README.md
         run: |
+          CONTENT=$(cat HACKERRANK_STATS.md)
+
+          sed -i "/<!--HACKERRANK-STATS-START-->/, /<!--HACKERRANK-STATS-END-->/c\
+<!--HACKERRANK-STATS-START-->\n$CONTENT\n<!--HACKERRANK-STATS-END-->" README.md
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "actions-user"
           git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions Bot"
-          git add README.md
-          git commit -m "Auto-update HackerRank stats" || echo "No changes"
+          git add README.md HACKERRANK_STATS.md
+          git commit -m "Auto-update HackerRank stats card" || echo "No changes"
           git push
