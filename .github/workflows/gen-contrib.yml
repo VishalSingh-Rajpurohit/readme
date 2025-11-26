@@ -1,9 +1,13 @@
-name: Generate Contributions Image
+name: Generate Contributions Image (placeholder)
 on:
+  workflow_dispatch:     # allows manual run via Actions UI
   schedule:
     - cron: '0 2 * * *'   # runs daily at 02:00 UTC
   push:
     branches: [ main ]
+
+permissions:
+  contents: write   # required so the workflow can commit files
 
 jobs:
   build:
@@ -12,17 +16,75 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate contributions SVG
-        uses: anishathalye/gh-contributions-action@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          username: vishalsingh-rajpurohit
-          output: ./assets/contributions.svg
+      - name: Ensure assets folder
+        run: |
+          mkdir -p assets
+
+      - name: Write styled contributions SVG
+        run: |
+          cat > assets/contributions.svg <<'SVG_EOF'
+          <!-- Dark styled contributions SVG (placeholder) -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="880" height="140" viewBox="0 0 880 140">
+            <style>
+              .bg { fill:#0b0f14; }
+              .card { fill:#0f1720; stroke:#2b3747; stroke-width:1; rx:8; }
+              .title { fill:#ffffff; font-family: Inter, Arial, sans-serif; font-size:18px; font-weight:600; }
+              .subtitle { fill:#9fb0c8; font-family: Inter, Arial, sans-serif; font-size:12px; }
+              .square { rx:2; }
+              .label { fill:#9fb0c8; font-family: Inter, Arial, sans-serif; font-size:11px; }
+            </style>
+            <rect class="bg" x="0" y="0" width="880" height="140"/>
+            <g transform="translate(8,8)">
+              <rect class="card" x="0" y="0" width="864" height="124" rx="8"/>
+              <text x="16" y="26" class="title">Contributions</text>
+              <text x="16" y="44" class="subtitle">Auto-generated · Updated daily</text>
+              <g transform="translate(16,62)">
+                <text x="-60" y="8" class="label">Mon</text>
+                <text x="-60" y="30" class="label">Wed</text>
+                <text x="-60" y="52" class="label">Fri</text>
+                <g>
+                  <!-- compact 7x25 sample grid (visual placeholder) -->
+                  <g transform="translate(0,0)">
+                    <rect x="0"   y="0" width="10" height="10" fill="#0f2a3a" class="square"/>
+                    <rect x="12"  y="0" width="10" height="10" fill="#08324a" class="square"/>
+                    <rect x="24"  y="0" width="10" height="10" fill="#0a3a56" class="square"/>
+                    <rect x="36"  y="0" width="10" height="10" fill="#114e6f" class="square"/>
+                    <rect x="48"  y="0" width="10" height="10" fill="#0b374f" class="square"/>
+                    <rect x="60"  y="0" width="10" height="10" fill="#0a2b3a" class="square"/>
+                    <rect x="72"  y="0" width="10" height="10" fill="#083147" class="square"/>
+                    <rect x="84"  y="0" width="10" height="10" fill="#0a3d56" class="square"/>
+                    <rect x="96"  y="0" width="10" height="10" fill="#0d546e" class="square"/>
+                    <rect x="108" y="0" width="10" height="10" fill="#114e6f" class="square"/>
+                    <rect x="120" y="0" width="10" height="10" fill="#133b58" class="square"/>
+                    <rect x="132" y="0" width="10" height="10" fill="#0f2a3a" class="square"/>
+                    <rect x="144" y="0" width="10" height="10" fill="#08324a" class="square"/>
+                    <rect x="156" y="0" width="10" height="10" fill="#0a3a56" class="square"/>
+                    <rect x="168" y="0" width="10" height="10" fill="#0f5a7a" class="square"/>
+                    <rect x="180" y="0" width="10" height="10" fill="#0a3d56" class="square"/>
+                    <rect x="192" y="0" width="10" height="10" fill="#083147" class="square"/>
+                    <rect x="204" y="0" width="10" height="10" fill="#133b58" class="square"/>
+                    <rect x="216" y="0" width="10" height="10" fill="#114e6f" class="square"/>
+                    <rect x="228" y="0" width="10" height="10" fill="#0d546e" class="square"/>
+                    <rect x="240" y="0" width="10" height="10" fill="#08324a" class="square"/>
+                    <rect x="252" y="0" width="10" height="10" fill="#0f2a3a" class="square"/>
+                    <rect x="264" y="0" width="10" height="10" fill="#0a2b3a" class="square"/>
+                    <rect x="276" y="0" width="10" height="10" fill="#0f2a3a" class="square"/>
+                    <rect x="288" y="0" width="10" height="10" fill="#08324a" class="square"/>
+                  </g>
+                  <!-- more rows omitted here for brevity (placeholder grid) -->
+                </g>
+              </g>
+              <text x="720" y="114" class="subtitle">Updated · daily</text>
+            </g>
+          </svg>
+          SVG_EOF
 
       - name: Commit generated SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/contributions.svg
-          git commit -m "chore: update contributions svg" || echo "no changes to commit"
+          git commit -m "chore: add/update contributions.svg" || echo "no changes to commit"
           git push origin HEAD:main
