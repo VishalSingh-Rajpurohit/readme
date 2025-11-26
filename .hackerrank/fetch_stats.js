@@ -2,39 +2,47 @@ const fs = require("fs");
 const https = require("https");
 
 const USERNAME = "vsrajpurohit0666";
-const URL = `https://www.hackerrank.com/${USERNAME}`;
+const URL = `https://r.hackerrank.com/rest/hackers/${USERNAME}/profile`;  // cached endpoint (works always)
 
 https.get(URL, (res) => {
-  let html = "";
+  let data = "";
 
-  res.on("data", (chunk) => (html += chunk));
+  res.on("data", (chunk) => (data += chunk));
+
   res.on("end", () => {
     try {
-      // Extract SQL badge (3 star)
-      let sqlBadge = html.match(/Sql[\s\S]*?3\s*stars/i)
-        ? "SQL Badge: 3⭐"
-        : "SQL Badge: Not found";
+      const json = JSON.parse(data);
 
-      // Extract Hackos
-      let hackos = html.match(/Hackos:\s*(\d+)/i);
-      let hackosValue = hackos ? hackos[1] : "Not visible";
+      const hackos = json.model && json.model.hackos ? json.model.hackos : "Not visible";
+      const badges = json.model.badges || [];
+
+      // get top badge
+      let topBadge = "Not found";
+      if (badges.length > 0) {
+        topBadge = `${badges[0].badge_name} (${badges[0].stars}-Star)`;
+      }
 
       const output = `
 # 🟩 HackerRank — Live Stats (Auto Updated)
 
-**👤 Username:** ${USERNAME}  
-**🟩 Hackos:** ${hackosValue}  
-**🏅 Top Badge:** SQL (3-Star)  
+👤 **Username:** ${USERNAME}  
+💰 **Hackos:** ${hackos}  
+🏅 **Top Badge:** ${topBadge}  
 
-⚠ This data is scraped from your public profile page (not API).  
+⏱ Updated automatically every 6 hours.
 `;
 
-      fs.writeFileSync("HACKERRANK_STATS.md", output);
-      console.log("HackerRank stats updated (scraper mode).");
+      // <-- DIRECTLY UPDATE README.md  
+      let readme = fs.readFileSync("README.md", "utf8");
+      readme = readme.replace(
+        /# 🟩 HackerRank[\s\S]*?hours\./,
+        output.trim()
+      );
+
+      fs.writeFileSync("README.md", readme);
+      console.log("README.md updated with live HackerRank stats.");
     } catch (e) {
-      fs.writeFileSync("HACKERRANK_STATS.md", "Failed to parse profile HTML.");
+      console.log("Parsing error:", e);
     }
   });
-}).on("error", () => {
-  fs.writeFileSync("HACKERRANK_STATS.md", "Could not load HackerRank profile.");
 });
