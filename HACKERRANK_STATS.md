@@ -2,6 +2,6 @@
 
 🧑‍💻 Username: vsrajpurohit0666  
 💰 Hackos: Not visible  
-🏅 Top Badge: HackerRank Home
+🏅 Top Badge: Not found 
 
-⚠ Data extracted directly from your public HTML page.
+⚠ This data is extracted from your public profile HTML.
