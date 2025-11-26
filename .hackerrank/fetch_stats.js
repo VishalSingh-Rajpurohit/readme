@@ -2,50 +2,52 @@ const fs = require("fs");
 const https = require("https");
 
 const USERNAME = "vsrajpurohit0666";
-const URL = `https://www.hackerrank.com/profile/${USERNAME}`;
 
-// Fetch HTML of your profile page
-https.get(URL, (res) => {
-    let data = "";
+const API_URL = `https://www.hackerrank.com/rest/hackers/${USERNAME}`;
 
-    res.on("data", (chunk) => {
-        data += chunk;
-    });
+function fetchJSON(url) {
+  return new Promise((resolve, reject) => {
+    https
+      .get(url, (res) => {
+        let data = "";
+        res.on("data", (chunk) => (data += chunk));
+        res.on("end", () => resolve(JSON.parse(data)));
+      })
+      .on("error", (err) => reject(err));
+  });
+}
 
-    res.on("end", () => {
-        // 1) SAVE RAW HTML for debugging
-        fs.writeFileSync("HACKERRANK_RAW.html", data);
-        console.log("Saved raw HTML → HACKERRANK_RAW.html");
+async function run() {
+  console.log("Fetching HackerRank public API...");
+  let apiData;
 
-        // 2) Extract Hackos
-        let hackos = "Not visible";
+  try {
+    apiData = await fetchJSON(API_URL);
+  } catch (err) {
+    console.error("API request failed, cannot get stats.");
+    apiData = null;
+  }
 
-        const hackosRegex = /"hackos":(\d+)/i;
-        const matchHackos = data.match(hackosRegex);
-        if (matchHackos) hackos = matchHackos[1];
+  let badge = "Not found";
 
-        // 3) Extract Top Badge
-        let topBadge = "Not found";
+  try {
+    const badges = apiData?.model?.badges || [];
+    if (badges.length > 0) {
+      badge = `${badges[0].name} (${badges[0].stars}⭐)`;
+    }
+  } catch (e) {}
 
-        const badgeRegex = /"badge_name":"(.*?)"/i;
-        const badgeMatch = data.match(badgeRegex);
-        if (badgeMatch) topBadge = badgeMatch[1];
+  const output = `
+# 🟩 HackerRank — Live Stats (Auto Updated)
 
-        // 4) Build the stats card
-        const stats = `
-🟩 HackerRank — Live Stats (Auto Updated)
+🧑‍💻 Username: ${USERNAME}  
+🏅 Top Badge: ${badge}
 
-🧑‍💻 Username: ${USERNAME}
-💰 Hackos: ${hackos}
-🏅 Top Badge: ${topBadge}
-
-⚠ This data is extracted from your public profile HTML (scraper mode).
+⚠ Hackos cannot be retrieved (HackerRank blocks automated requests).
 `;
 
-        fs.writeFileSync("HACKERRANK_STATS.md", stats);
-        console.log("Updated HACKERRANK_STATS.md");
-    });
+  fs.writeFileSync("HACKERRANK_STATS.md", output.trim());
+  console.log("HACKERRANK_STATS.md updated!");
+}
 
-}).on("error", (err) => {
-    console.error("Error fetching data:", err);
-});
+run();
