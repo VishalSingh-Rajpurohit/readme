@@ -1,7 +1,8 @@
+
 # 🟩 HackerRank — Live Stats (Auto Updated)
 
-🧑‍💻 Username: vsrajpurohit0666
-💰 Hackos: Not visible
-🏅 Top Badge: Not found
+**👤 Username:** vsrajpurohit0666  
+**🟩 Hackos:** Not visible  
+**🏅 Top Badge:** SQL (3-Star)  
 
-⚠ Badge data via third-party API (stable).
+⚠ This data is scraped from your public profile page (not API).  
