@@ -103,3 +103,12 @@
   <img src="./assets/contributions.svg" width="100%" alt="Contributions" />
 </p>
 
+
+
+## 🟩 HackerRank — Live Stats (Auto Updated)
+
+- 👤 **Username:** vsrajpurohit0666  
+- 💰 **Hackos:** Not visible  
+- 🏅 **Top Badge:** Not found  
+
+⚠ Scraped from public profile (HTML).
