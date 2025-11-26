@@ -9,60 +9,65 @@ function fetchHTML(url) {
     const options = {
       headers: {
         "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0 Safari/537.36",
         Accept: "text/html",
       },
     };
 
     https
       .get(url, options, (res) => {
-        let html = "";
-        res.on("data", (chunk) => (html += chunk));
-        res.on("end", () => resolve(html));
+        let data = "";
+        res.on("data", (chunk) => (data += chunk));
+        res.on("end", () => resolve(data));
       })
       .on("error", reject);
   });
 }
 
-function extractBetween(html, start, end) {
-  const s = html.indexOf(start);
+function extract(text, start, end) {
+  const s = text.indexOf(start);
   if (s === -1) return null;
-  const e = html.indexOf(end, s + start.length);
+  const e = text.indexOf(end, s + start.length);
   if (e === -1) return null;
-  return html.substring(s + start.length, e).trim();
+  return text.substring(s + start.length, e).trim();
 }
 
 async function run() {
-  console.log("Fetching HTML profile…");
+  console.log("Fetching profile HTML...");
 
-  const html = await fetchHTML(PROFILE_URL);
+  let html = await fetchHTML(PROFILE_URL);
 
-  fs.writeFileSync("HACKERRANK_RAW.html", html); // debug store
+  if (!html || html.includes("Access Denied")) {
+    console.log("⚠ HTML Blocked — HackerRank still blocking.");
+    fs.writeFileSync(
+      "HACKERRANK_STATS.md",
+      `# HackerRank — Live Stats\n\n❌ Unable to fetch — Access Denied.`
+    );
+    return;
+  }
 
-  // =====================
+  // Extract badge (SQL, Python, etc.)
+  let badgeName = extract(html, `"badge_name":"`, `"`);
+  let badgeStars = extract(html, `"stars":`, `,`);
+
   // Extract Hackos
-  // =====================
-  let hackos = extractBetween(html, "Hackos:", "</");
-  if (!hackos) hackos = "Not visible";
+  let hackos = extract(html, `"hackos":`, `,`);
 
-  // =====================
-  // Extract Badge
-  // =====================
-  let badge = extractBetween(html, 'alt="', '"/>');
-  if (!badge || badge.includes("Default")) badge = "No Badge Found";
+  if (!hackos) hackos = "Not visible";
+  if (!badgeName) badgeName = "Not found";
 
   const output = `
 # 🟩 HackerRank — Live Stats (Auto Updated)
 
 🧑‍💻 Username: ${USERNAME}  
 💰 Hackos: ${hackos}  
-🏅 Top Badge: ${badge}
+🏅 Top Badge: ${badgeName} ${badgeStars ? `(${badgeStars}-Star)` : ""}
 
-⚠ Data extracted directly from your public HTML page.
+⚠ This data is extracted from your public profile HTML.
 `;
 
   fs.writeFileSync("HACKERRANK_STATS.md", output.trim());
-  console.log("HACKERRANK_STATS.md updated!");
+  console.log("✔ Updated HACKERRANK_STATS.md");
 }
 
 run();
