@@ -11,39 +11,26 @@ https.get(URL, (res) => {
   res.on("end", () => {
     try {
       // Extract Hackos
-      let hackos = html.match(/Hackos[^0-9]*([0-9]+)/i);
-      let hackosValue = hackos ? hackos[1] : "Not visible";
+      let hackosMatch = html.match(/Hackos[^0-9]+([0-9]+)/i);
+      let hackos = hackosMatch ? hackosMatch[1] : "Not visible";
 
-      // Extract SQL 3 star badge
+      // Extract SQL 3-Star badge
       let sqlBadge = html.includes("Sql") ? "SQL (3⭐)" : "Not found";
 
-      // Build markdown block
-      const statsBlock = `
-## 🟩 HackerRank — Live Stats (Auto Updated)
+      const output = `
+### 👤 Username: **${USERNAME}**
+### 💰 Hackos: **${hackos}**
+### 🏅 Top Badge: **${sqlBadge}**
 
-- 👤 **Username:** ${USERNAME}  
-- 💰 **Hackos:** ${hackosValue}  
-- 🏅 **Top Badge:** ${sqlBadge}  
-
-⚠ Scraped from public profile (HTML).
+⚠ This data is extracted automatically from your public HackerRank profile.
 `;
 
-      // Read README
-      let readme = fs.readFileSync("README.md", "utf8");
-
-      // Replace old block
-      const regex = /## 🟩 HackerRank[\s\S]*?profile \(HTML\)\./;
-      if (regex.test(readme)) {
-        readme = readme.replace(regex, statsBlock);
-      } else {
-        readme += "\n" + statsBlock;
-      }
-
-      fs.writeFileSync("README.md", readme);
-      console.log("README updated with live HackerRank stats.");
+      fs.writeFileSync("HACKERRANK_STATS.md", output.trim());
+      console.log("HackerRank stats updated!");
     } catch (err) {
-      console.error(err);
-      process.exit(1);
+      fs.writeFileSync("HACKERRANK_STATS.md", "⚠ Failed to parse HackerRank profile.");
     }
   });
+}).on("error", () => {
+  fs.writeFileSync("HACKERRANK_STATS.md", "⚠ Could not load HackerRank profile.");
 });
