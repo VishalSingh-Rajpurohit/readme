@@ -86,6 +86,9 @@
 
 <br>
 
+## 🟩 HackerRank — Live Stats (Auto Updated)
+(placeholder — will be replaced automatically)
+
 ## 🟩 HackerRank — Live Stats  
 (Automatically updates every 6 hours)
 
