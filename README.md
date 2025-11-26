@@ -87,6 +87,7 @@
 <br>
 
 <!-- ================= STATS SECTION ================= -->
+<h3> Contributions </h3>
 <p>
   <img src="./assets/contributions.svg" width="100%" alt="Contributions" />
 </p>
