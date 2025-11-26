@@ -20,8 +20,7 @@
 - 🔭 I’m currently working on **My Skill**
 - 🌱 I’m currently learning **AI**
 - 👯 I’m looking to collaborate on **Machine Learning Projects**
-- 👨‍💻 All of my projects are available at  
-  **https://github.com/VishalSingh-Rajpurohit?tab=repositories**
+- 👨‍💻 All of my projects are available at  **https://github.com/VishalSingh-Rajpurohit?tab=repositories**
 - 💬 Ask me about **Python, Machine Learning**
 - 📫 How to reach me **vsrajpurohit0666@gmail.com**
 
@@ -31,8 +30,9 @@
 
 <h2 align="left">⚙️ Machine Learning</h2>
 
+<!-- Main ML Logo -->
 <p>
-  <img src="https://raw.githubusercontent.com/valohai/ml-logos/master/machine-learning.svg" width="120"/>
+  <img src="https://cdn.jsdelivr.net/gh/valohai/ml-logos@master/machine-learning.png" width="120"/>
 </p>
 
 <h3>🔥 Tools & Libraries I Use</h3>
@@ -40,48 +40,33 @@
 <p>
 
   <!-- Pandas -->
-  <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original.svg" width="40" height="40"/>
+  <a href="https://pandas.pydata.org/" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="40" height="40"/>
   </a>
 
   <!-- NumPy -->
-  <a href="https://numpy.org/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg" width="40" height="40"/>
+  <a href="https://numpy.org/" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" width="40" height="40"/>
   </a>
 
   <!-- scikit-learn -->
-  <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/scikitlearn/scikitlearn-original.svg" width="40" height="40"/>
+  <a href="https://scikit-learn.org/" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" width="40" height="40"/>
   </a>
 
   <!-- TensorFlow -->
-  <a href="https://www.tensorflow.org/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tensorflow/tensorflow-original.svg" width="40" height="40"/>
+  <a href="https://www.tensorflow.org/" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" width="40" height="40"/>
   </a>
 
   <!-- Keras -->
-  <a href="https://keras.io/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/valohai/ml-logos/master/keras.svg" width="40" height="40"/>
+  <a href="https://keras.io/" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/valohai/ml-logos@master/keras.png" width="40" height="40"/>
   </a>
 
   <!-- PyTorch -->
-  <a href="https://pytorch.org/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pytorch/pytorch-original.svg" width="40" height="40"/>
-  </a>
-
-  <!-- XGBoost -->
-  <a href="https://xgboost.ai" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/PatrickTitus/xgboost-icons/main/xgboost.svg" width="40" height="40"/>
-  </a>
-
-  <!-- LightGBM -->
-  <a href="https://lightgbm.readthedocs.io/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/amagalm/SVG-icons/master/lightgbm.svg" width="40" height="40"/>
-  </a>
-
-  <!-- CatBoost -->
-  <a href="https://catboost.ai/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/ogozuacik/images/main/catboost.svg" width="40" height="40"/>
+  <a href="https://pytorch.org/" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" width="40" height="40"/>
   </a>
 
 </p>
