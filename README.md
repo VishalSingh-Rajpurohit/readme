@@ -86,6 +86,13 @@
 
 <br>
 
+## 🟩 HackerRank — Live Stats (Auto Updated)
+
+<!--HACKERRANK-STATS-START-->
+Loading latest HackerRank stats...
+<!--HACKERRANK-STATS-END-->
+
+
 ## 🟩 HackerRank — Live Stats  
 (Automatically updates every 6 hours)
 
