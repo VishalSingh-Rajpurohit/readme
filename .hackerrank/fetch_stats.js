@@ -10,23 +10,21 @@ https.get(URL, (res) => {
   res.on("data", (chunk) => (html += chunk));
   res.on("end", () => {
     try {
-      // Extract SQL badge (3 star)
-      let sqlBadge = html.match(/Sql[\s\S]*?3\s*stars/i)
-        ? "SQL Badge: 3⭐"
-        : "SQL Badge: Not found";
-
-      // Extract Hackos
-      let hackos = html.match(/Hackos:\s*(\d+)/i);
+      // --- Extract Hackos ---
+      let hackos = html.match(/"hackos":(\d+)/);
       let hackosValue = hackos ? hackos[1] : "Not visible";
+
+      // --- Extract SQL Badge ---
+      let sqlBadge = html.includes("Sql") ? "SQL (3-Star)" : "Not found";
 
       const output = `
 # 🟩 HackerRank — Live Stats (Auto Updated)
 
-**👤 Username:** ${USERNAME}  
-**🟩 Hackos:** ${hackosValue}  
-**🏅 Top Badge:** SQL (3-Star)  
+**🧑‍💻 Username:** ${USERNAME}  
+**💰 Hackos:** ${hackosValue}  
+**🏅 Top Badge:** ${sqlBadge}
 
-⚠ This data is scraped from your public profile page (not API).  
+⚠ This data is extracted from your public profile HTML.
 `;
 
       fs.writeFileSync("HACKERRANK_STATS.md", output);
