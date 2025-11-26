@@ -1,0 +1,7 @@
+name: Generate Contributions Image
+on:
+  schedule:
+    - cron: '0 2 * * *'   # runs daily at 02:00 UTC
+  push:
+    branches: [ main ]
+  workflow_dispatch:     # allows manual run from Actions UI
