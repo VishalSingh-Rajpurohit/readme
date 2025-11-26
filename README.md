@@ -94,9 +94,7 @@
 </p>
 
 📊 **Your Live HackerRank Progress:**  
-👉 Click to view full stats:  
-
-📄 **[HACKERRANK_STATS.md](./HACKERRANK_STATS.md)**
+👉 Click to view full stats:  📄 **[HACKERRANK_STATS.md](./HACKERRANK_STATS.md)**
  
 
 <!-- ================= STATS SECTION ================= -->
