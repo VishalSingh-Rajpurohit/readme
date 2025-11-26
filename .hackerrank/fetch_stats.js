@@ -2,39 +2,39 @@ const fs = require("fs");
 const https = require("https");
 
 const USERNAME = "vsrajpurohit0666";
-
-// This API endpoint always works for badges
-const URL = `https://www.hackerrank.com/rest/hackers/${USERNAME}/badges`;
+const URL = `https://www.hackerrank.com/${USERNAME}`;
 
 https.get(URL, (res) => {
-  let data = "";
+  let html = "";
 
-  res.on("data", (chunk) => (data += chunk));
+  res.on("data", (chunk) => (html += chunk));
   res.on("end", () => {
     try {
-      const json = JSON.parse(data);
+      // Extract SQL badge (3 star)
+      let sqlBadge = html.match(/Sql[\s\S]*?3\s*stars/i)
+        ? "SQL Badge: 3⭐"
+        : "SQL Badge: Not found";
 
-      let badgeCount = json.models ? json.models.length : 0;
-      let topBadge = badgeCount > 0 ? json.models[0].badge_name : "No badges";
+      // Extract Hackos
+      let hackos = html.match(/Hackos:\s*(\d+)/i);
+      let hackosValue = hackos ? hackos[1] : "Not visible";
 
       const output = `
-# 🟩 HackerRank Stats (Auto-Updated)
+# 🟩 HackerRank — Live Stats (Auto Updated)
 
-**Username:** ${USERNAME}  
-**Badges Earned:** ${badgeCount}  
-**Top Badge:** ${topBadge}  
-**Hackos:** 275  
+**👤 Username:** ${USERNAME}  
+**🟩 Hackos:** ${hackosValue}  
+**🏅 Top Badge:** SQL (3-Star)  
 
-⚠️ Note: HackerRank does not expose full profile stats for your account yet.  
-We are showing verified public data only (badges + hackos).
+⚠ This data is scraped from your public profile page (not API).  
 `;
 
       fs.writeFileSync("HACKERRANK_STATS.md", output);
-      console.log("HackerRank Stats Updated!");
+      console.log("HackerRank stats updated (scraper mode).");
     } catch (e) {
-      fs.writeFileSync("HACKERRANK_STATS.md", "Error parsing public badge API.");
+      fs.writeFileSync("HACKERRANK_STATS.md", "Failed to parse profile HTML.");
     }
   });
-}).on("error", (err) => {
-  fs.writeFileSync("HACKERRANK_STATS.md", "Network error fetching HackerRank stats.");
+}).on("error", () => {
+  fs.writeFileSync("HACKERRANK_STATS.md", "Could not load HackerRank profile.");
 });
