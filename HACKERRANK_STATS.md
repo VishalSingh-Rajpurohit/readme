@@ -1,1 +1,1 @@
-Error parsing HackerRank response.
+Error parsing public badge API.
