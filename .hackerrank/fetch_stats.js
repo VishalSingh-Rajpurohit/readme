@@ -2,55 +2,63 @@ const fs = require("fs");
 const https = require("https");
 
 const USERNAME = "vsrajpurohit0666";
+const PROFILE_URL = `https://www.hackerrank.com/profile/${USERNAME}`;
 
-const API_URL = `https://www.hackerrank.com/rest/hackers/${USERNAME}`;
-
-function fetchJSON(url) {
+function fetchHTML(url) {
   return new Promise((resolve, reject) => {
     const options = {
       headers: {
         "User-Agent":
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
-        Accept: "application/json",
+        Accept: "text/html",
       },
     };
 
     https
       .get(url, options, (res) => {
-        let data = "";
-        res.on("data", (chunk) => (data += chunk));
-        res.on("end", () => {
-          try {
-            resolve(JSON.parse(data)); // FIXED
-          } catch (err) {
-            console.error("JSON Parse failed, raw data:");
-            console.error(data);
-            resolve(null);
-          }
-        });
+        let html = "";
+        res.on("data", (chunk) => (html += chunk));
+        res.on("end", () => resolve(html));
       })
       .on("error", reject);
   });
 }
 
+function extractBetween(html, start, end) {
+  const s = html.indexOf(start);
+  if (s === -1) return null;
+  const e = html.indexOf(end, s + start.length);
+  if (e === -1) return null;
+  return html.substring(s + start.length, e).trim();
+}
+
 async function run() {
-  console.log("Fetching HackerRank public API...");
-  let apiData = await fetchJSON(API_URL);
+  console.log("Fetching HTML profile…");
 
-  let badge = "Not found";
+  const html = await fetchHTML(PROFILE_URL);
 
-  if (apiData?.model?.badges?.length > 0) {
-    const b = apiData.model.badges[0];
-    badge = `${b.name} (${b.stars}⭐)`;
-  }
+  fs.writeFileSync("HACKERRANK_RAW.html", html); // debug store
+
+  // =====================
+  // Extract Hackos
+  // =====================
+  let hackos = extractBetween(html, "Hackos:", "</");
+  if (!hackos) hackos = "Not visible";
+
+  // =====================
+  // Extract Badge
+  // =====================
+  let badge = extractBetween(html, 'alt="', '"/>');
+  if (!badge || badge.includes("Default")) badge = "No Badge Found";
 
   const output = `
 # 🟩 HackerRank — Live Stats (Auto Updated)
 
 🧑‍💻 Username: ${USERNAME}  
+💰 Hackos: ${hackos}  
 🏅 Top Badge: ${badge}
 
-⚠ Hackos cannot be retrieved (HackerRank blocks automated scripts).
+⚠ Data extracted directly from your public HTML page.
 `;
 
   fs.writeFileSync("HACKERRANK_STATS.md", output.trim());
