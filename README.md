@@ -86,6 +86,17 @@
 
 <br>
 
+## 🟩 HackerRank — Live Progress  
+(Automatically updates every 6 hours)
+
+<p align="center">
+  <img src="https://img.shields.io/badge/HackerRank-vsrajpurohit0666-brightgreen?logo=hackerrank" width="200"/>
+</p>
+
+### 🚀 Auto-Generated Stats  
+👉 See live progress here:  
+📄 **[HACKERRANK_STATS.md](./HACKERRANK_STATS.md)**  
+
 <!-- ================= STATS SECTION ================= -->
 <h3> Contributions </h3>
 <p>
