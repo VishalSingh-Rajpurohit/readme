@@ -2,47 +2,48 @@ const fs = require("fs");
 const https = require("https");
 
 const USERNAME = "vsrajpurohit0666";
-const URL = `https://r.hackerrank.com/rest/hackers/${USERNAME}/profile`;  // cached endpoint (works always)
+const URL = `https://www.hackerrank.com/${USERNAME}`;
 
 https.get(URL, (res) => {
-  let data = "";
+  let html = "";
 
-  res.on("data", (chunk) => (data += chunk));
-
+  res.on("data", (chunk) => (html += chunk));
   res.on("end", () => {
     try {
-      const json = JSON.parse(data);
+      // Extract Hackos
+      let hackos = html.match(/Hackos[^0-9]*([0-9]+)/i);
+      let hackosValue = hackos ? hackos[1] : "Not visible";
 
-      const hackos = json.model && json.model.hackos ? json.model.hackos : "Not visible";
-      const badges = json.model.badges || [];
+      // Extract SQL 3 star badge
+      let sqlBadge = html.includes("Sql") ? "SQL (3⭐)" : "Not found";
 
-      // get top badge
-      let topBadge = "Not found";
-      if (badges.length > 0) {
-        topBadge = `${badges[0].badge_name} (${badges[0].stars}-Star)`;
-      }
+      // Build markdown block
+      const statsBlock = `
+## 🟩 HackerRank — Live Stats (Auto Updated)
 
-      const output = `
-# 🟩 HackerRank — Live Stats (Auto Updated)
+- 👤 **Username:** ${USERNAME}  
+- 💰 **Hackos:** ${hackosValue}  
+- 🏅 **Top Badge:** ${sqlBadge}  
 
-👤 **Username:** ${USERNAME}  
-💰 **Hackos:** ${hackos}  
-🏅 **Top Badge:** ${topBadge}  
-
-⏱ Updated automatically every 6 hours.
+⚠ Scraped from public profile (HTML).
 `;
 
-      // <-- DIRECTLY UPDATE README.md  
+      // Read README
       let readme = fs.readFileSync("README.md", "utf8");
-      readme = readme.replace(
-        /# 🟩 HackerRank[\s\S]*?hours\./,
-        output.trim()
-      );
+
+      // Replace old block
+      const regex = /## 🟩 HackerRank[\s\S]*?profile \(HTML\)\./;
+      if (regex.test(readme)) {
+        readme = readme.replace(regex, statsBlock);
+      } else {
+        readme += "\n" + statsBlock;
+      }
 
       fs.writeFileSync("README.md", readme);
-      console.log("README.md updated with live HackerRank stats.");
-    } catch (e) {
-      console.log("Parsing error:", e);
+      console.log("README updated with live HackerRank stats.");
+    } catch (err) {
+      console.error(err);
+      process.exit(1);
     }
   });
 });
