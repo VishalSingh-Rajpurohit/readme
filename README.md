@@ -5,7 +5,7 @@
  <img src="https://komarev.com/ghpvc/?username=VishalSingh-Rajpurohit&label=Profile%20Views&color=0e75b6&style=flat" alt="Profile Views" />
 </p>
 
-![Profile Views](https://komarev.com/ghpvc/?username=VishalSingh-Rajpurohit&label=Profile%20views&color=0e75b6&style=flat)
+![Profile Views](https://img.shields.io/badge/Profile%20Views-🔍%20Tracking%20Disabled-blue?style=for-the-badge)
 
 
 <p align="left">
