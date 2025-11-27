@@ -93,7 +93,7 @@
 ## 🟩 HackerRank — Stats
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/VishalSingh-Rajpurohit/readme/main/assets/hackerrank_topbadge.svg" width="800" />
+  <img src="./assets/hackerrank_card.svg" width="800" alt="HackerRank card" />
 </p>
 
 <!-- ================= STATS SECTION ================= -->
