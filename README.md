@@ -6,10 +6,8 @@
 </p>
 
 <p align="left">
-  <img src="https://komarev.com/ghpvc/?username=VishalSinghRajpurohit&label=Profile%20views&color=0e75b6&style=flat" />
+  <img src="https://komarev.com/ghpvc/?username=vishalsingh-rajpurohit&label=Profile%20views&color=0e75b6&style=flat" />
 </p>
-
-
 
 <p align="left">
   <a href="https://github.com/ryo-ma/github-profile-trophy">
