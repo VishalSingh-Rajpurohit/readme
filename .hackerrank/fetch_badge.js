@@ -1,0 +1,63 @@
+const fs = require("fs");
+const https = require("https");
+
+const USERNAME = "vsrajpurohit0666";
+const URL = "https://www.hackerrank.com/" + USERNAME;
+
+https.get(URL, (res) => {
+  let html = "";
+  res.on("data", (c) => html += c);
+  res.on("end", () => {
+
+    // extract top badge
+    let badgeMatch = html.match(/<div[^>]*class="badge-title"[^>]*>(.*?)<\/div>/i);
+    let badge = badgeMatch ? badgeMatch[1].trim() : "Not found";
+
+    // star count (optional)
+    let starMatch = html.match(/(star-20-full)/g);
+    let stars = starMatch ? starMatch.length : 0;
+    let starString = stars > 0 ? `${stars}★` : "";
+
+    // generate SVG
+    const svg = `
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="230" viewBox="0 0 800 230">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#e0f7ff"/>
+      <stop offset="1" stop-color="#fbe7ff"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0" stop-color="#5aa9ff"/>
+      <stop offset="1" stop-color="#c77bff"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="10" y="15" width="780" height="200" rx="20" fill="url(#g1)" stroke="url(#g2)" stroke-width="3"/>
+
+  <!-- simple left icon -->
+  <circle cx="120" cy="110" r="55" fill="white"/>
+  <circle cx="120" cy="75" r="8" fill="#60a5fa"/>
+  <circle cx="120" cy="145" r="8" fill="#60a5fa"/>
+  <circle cx="80" cy="110" r="8" fill="#60a5fa"/>
+  <circle cx="160" cy="110" r="8" fill="#60a5fa"/>
+
+  <line x1="120" y1="83" x2="120" y2="137" stroke="#3b82f6" stroke-width="4"/>
+  <line x1="120" y1="137" x2="86" y2="110" stroke="#3b82f6" stroke-width="4"/>
+  <line x1="120" y1="137" x2="154" y2="110" stroke="#3b82f6" stroke-width="4"/>
+
+  <text x="200" y="70" font-family="Segoe UI" font-size="36" font-weight="700">vsrajpurohit0666</text>
+  <text x="200" y="100" font-family="Segoe UI" font-size="16" fill="#4b5563">HackerRank • Public profile</text>
+
+  <!-- badge box -->
+  <rect x="520" y="60" width="240" height="90" rx="15" fill="white"/>
+  <text x="540" y="95" font-size="14" fill="#6b7280" font-family="Segoe UI">Top Badge</text>
+  <text x="540" y="130" font-size="26" fill="#0f172a" font-family="Segoe UI" font-weight="700">
+    ${badge} ${starString}
+  </text>
+</svg>
+`;
+
+    fs.writeFileSync("assets/hackerrank_badge_card.svg", svg);
+    console.log("Badge card updated.");
+  });
+});
