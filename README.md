@@ -84,15 +84,15 @@
 
 <br>
 
+<p align="center">
+  <img src="./assets/hackerrank_card.svg" width="800" alt="HackerRank card" />
+</p>
+
 ## 🟩 HackerRank — Live Stats  
 (Automatically updates every 6 hours)
 
 <p align="center">
   <img src="https://img.shields.io/badge/HackerRank-vsrajpurohit0666-brightgreen?logo=hackerrank" width="200"/>
-</p>
-
-<p align="center">
-  <img src="./assets/hackerrank_card.svg" width="800" alt="HackerRank card" />
 </p>
 
 📊 **Your Live HackerRank Progress:**  
