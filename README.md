@@ -91,6 +91,10 @@
   <img src="https://img.shields.io/badge/HackerRank-vsrajpurohit0666-brightgreen?logo=hackerrank" width="200"/>
 </p>
 
+<p align="center">
+  <img src="./assets/hackerrank_card.svg" width="800" alt="HackerRank card" />
+</p>
+
 📊 **Your Live HackerRank Progress:**  
 👉 Click to view full stats:  📄 **[HACKERRANK_STATS.md](./HACKERRANK_STATS.md)**
 
