@@ -95,7 +95,11 @@
 
 📊 **Your Live HackerRank Progress:**  
 👉 Click to view full stats:  📄 **[HACKERRANK_STATS.md](./HACKERRANK_STATS.md)**
- 
+
+ ## 🟧 LeetCode — Live Stats (Auto Updated)
+(placeholder — replaced automatically)
+
+📄 **[View full LeetCode stats →](./LEETCODE_STATS.md)**
 
 <!-- ================= STATS SECTION ================= -->
 <h3> Contributions </h3>
