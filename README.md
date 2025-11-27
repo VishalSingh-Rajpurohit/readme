@@ -10,8 +10,9 @@
 </p>
 
 <p align="left">
-  <img src="https://github-profile-trophy.vercel.app/?username=VishalSingh-Rajpurohit&theme=radical&no-frame=true&animation=fade" />
+  <img src="https://github-profile-trophy.vercel.app/?username=VishalSingh-Rajpurohit&theme=onedark&animation=bounce&no-frame=true" />
 </p>
+
 
 
 <p align="left">
