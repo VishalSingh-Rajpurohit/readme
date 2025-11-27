@@ -99,6 +99,15 @@
        alt="HackerRank Badge Card" width="800"/>
 </p>
 
+## 🟩 HackerRank — Live Stats (Auto Updated)
+
+<!-- HACKERRANK_BADGE -->
+(placeholder — will be replaced automatically)
+<!-- HACKERRANK_BADGE_END -->
+
+<!-- HACKERRANK_BADGE -->
+<p align="left"><img src="./assets/hackerrank_card.svg" alt="HackerRank card" /></p>
+<!-- HACKERRANK_BADGE_END -->
 
 ## 🟩 HackerRank — Live Stats  
 (Automatically updates every 6 hours)
