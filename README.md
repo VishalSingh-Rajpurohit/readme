@@ -10,6 +10,11 @@
 </p>
 
 <p align="left">
+  <img src="https://github-profile-trophy.vercel.app/?username=VishalSingh-Rajpurohit&theme=radical&no-frame=true&animation=fade" />
+</p>
+
+
+<p align="left">
   <a href="https://twitter.com/vsrajpurohit011" target="blank">
     <img src="https://img.shields.io/twitter/follow/vsrajpurohit011?logo=twitter&style=for-the-badge" alt="vsrajpurohit011" />
   </a>
