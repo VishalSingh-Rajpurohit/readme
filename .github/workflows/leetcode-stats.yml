@@ -1,0 +1,30 @@
+name: Update LeetCode Stats
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"   # every 6 hours
+
+jobs:
+  leetcode:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Run LeetCode script
+        run: node .leetcode/fetch_leetcode.js
+
+      - name: Commit LeetCode Stats
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add LEETCODE_STATS.md || echo "No file"
+          git commit -m "Auto-update LeetCode stats" || echo "No changes"
+          git push
