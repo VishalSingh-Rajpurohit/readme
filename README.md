@@ -92,7 +92,7 @@
 
 ## 🟩 HackerRank — Stats
 
-<p align="center">
+<p align="left">
   <img src="./assets/hackerrank_card.svg" width="800" alt="HackerRank card" />
 </p>
 
