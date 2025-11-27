@@ -7,6 +7,9 @@
 
 ![Profile Views](https://img.shields.io/badge/Profile%20Views-🔍%20Tracking%20Disabled-blue?style=for-the-badge)
 
+![Profile Views](https://img.shields.io/badge/Profile%20Views-1200-blue?style=for-the-badge)
+
+
 
 <p align="left">
   <a href="https://github.com/ryo-ma/github-profile-trophy">
