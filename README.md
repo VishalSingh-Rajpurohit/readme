@@ -6,8 +6,9 @@
 </p>
 
 <p align="left">
-  <img src="https://komarev.com/ghpvc/?username=VishalSingh-Rajpurohit&label=Profile%20views&color=0e75b6&style=flat" alt="VishalSingh-Rajpurohit" />
+  <img src="https://komarev.com/ghpvc/?username=VishalSingh-Rajpurohit&style=for-the-badge&color=green" />
 </p>
+
 
 
 <p align="left">
