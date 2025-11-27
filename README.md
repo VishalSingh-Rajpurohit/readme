@@ -2,7 +2,7 @@
 <h3 align="center">A passionate Machine Learning developer from India</h3>
 
 <p align="left">
-  <img src="https://komarev.com/ghpvc/?username=VishalSingh-Rajpurohit&label=Profile%20views&color=0e75b6&style=flat" alt="VishalSingh-Rajpurohit" /
+ <img src="https://komarev.com/ghpvc/?username=VishalSingh-Rajpurohit&label=Profile%20Views&color=0e75b6&style=flat" alt="Profile Views" />
 </p>
 
 ![Profile Views](https://komarev.com/ghpvc/?username=VishalSingh-Rajpurohit&label=Profile%20views&color=0e75b6&style=flat)
