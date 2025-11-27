@@ -84,9 +84,16 @@
 
 <br>
 
-<p align="center">
-  <img src="./assets/hackerrank_card.svg" width="800" alt="HackerRank card" />
-</p>
+## 🟩 HackerRank — Badge Card
+
+<a href="https://www.hackerrank.com/vsrajpurohit0666" target="_blank">
+  <img src="https://img.shields.io/badge/HackerRank-vsrajpurohit0666-brightgreen?style=for-the-badge&logo=hackerrank" />
+</a>
+
+<img src="https://img.shields.io/badge/SQL%20Badge-3★-blue?style=for-the-badge" />
+
+<img src="https://img.shields.io/badge/Hackos-275-orange?style=for-the-badge" />
+
 
 ## 🟩 HackerRank — Live Stats  
 (Automatically updates every 6 hours)
