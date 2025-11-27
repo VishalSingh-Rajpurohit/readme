@@ -93,7 +93,7 @@
 ## 🟩 HackerRank — Live Stats (Auto Updated)
 
 <!-- HACKERRANK_BADGE -->
-<p align="left"><img src="./assets/hackerrank_card.svg" alt="HackerRank card" /></p>
+![HackerRank Top Badge](assets/hackerrank_badge_card.svg)
 <!-- HACKERRANK_BADGE_END -->
 
 <!-- ================= STATS SECTION ================= -->
