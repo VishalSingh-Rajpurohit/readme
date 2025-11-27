@@ -84,20 +84,6 @@
 
 <br>
 
-## 🟩 HackerRank — Badge Card
-
-<a href="https://www.hackerrank.com/vsrajpurohit0666" target="_blank">
-  <img src="https://img.shields.io/badge/HackerRank-vsrajpurohit0666-brightgreen?style=for-the-badge&logo=hackerrank" />
-</a>
-
-<img src="https://img.shields.io/badge/SQL%20Badge-3★-blue?style=for-the-badge" />
-
-<img src="https://img.shields.io/badge/Hackos-275-orange?style=for-the-badge" />
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/VishalSingh-Rajpurohit/readme/main/assets/hackerrank_card.svg" 
-       alt="HackerRank Badge Card" width="800"/>
-</p>
 
 ## 🟩 HackerRank — Live Stats (Auto Updated)
 
@@ -105,19 +91,6 @@
 <p align="left"><img src="./assets/hackerrank_card.svg" alt="HackerRank card" /></p>
 <!-- HACKERRANK_BADGE_END -->
 
-<!-- HACKERRANK_BADGE -->
-<p align="left"><img src="./assets/hackerrank_card.svg" alt="HackerRank card" /></p>
-<!-- HACKERRANK_BADGE_END -->
-
-## 🟩 HackerRank — Live Stats  
-(Automatically updates every 6 hours)
-
-<p align="center">
-  <img src="https://img.shields.io/badge/HackerRank-vsrajpurohit0666-brightgreen?logo=hackerrank" width="200"/>
-</p>
-
-📊 **Your Live HackerRank Progress:**  
-👉 Click to view full stats:  📄 **[HACKERRANK_STATS.md](./HACKERRANK_STATS.md)**
 
 ## 🟩 LeetCode — Live Stats (Auto Updated)
 
