@@ -86,7 +86,7 @@
 
 ## 🟩 LeetCode — Live Stats (Auto Updated)
 
-<p align="center">
+<p align="left">
   <img src="https://leetcard.jacoblin.cool/Vishal0666?theme=unicorn&font=Baloo%202&ext=contest&border=2&radius=12" />
 </p>
 
