@@ -92,8 +92,6 @@
 
 ## 🟩 HackerRank — Live Stats (Auto Updated)
 
-## 🟩 HackerRank — Live Stats (Auto Updated)
-
 <!-- HACKERRANK_BADGE -->
 (placeholder — will be replaced automatically)
 <!-- HACKERRANK_BADGE_END -->
