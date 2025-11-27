@@ -94,6 +94,11 @@
 
 <img src="https://img.shields.io/badge/Hackos-275-orange?style=for-the-badge" />
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/VishalSingh-Rajpurohit/readme/main/assets/hackerrank_card.svg" 
+       alt="HackerRank Badge Card" width="800"/>
+</p>
+
 
 ## 🟩 HackerRank — Live Stats  
 (Automatically updates every 6 hours)
