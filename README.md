@@ -92,8 +92,10 @@
 
 ## 🟩 HackerRank — Live Stats (Auto Updated)
 
+## 🟩 HackerRank — Live Stats (Auto Updated)
+
 <!-- HACKERRANK_BADGE -->
-<p align="left"><img src="./assets/hackerrank_card.svg" alt="HackerRank card" /></p>
+(placeholder — will be replaced automatically)
 <!-- HACKERRANK_BADGE_END -->
 
 <!-- ================= STATS SECTION ================= -->
