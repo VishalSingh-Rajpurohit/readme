@@ -90,11 +90,11 @@
   <img src="https://leetcard.jacoblin.cool/Vishal0666?theme=unicorn&font=Baloo%202&ext=contest&border=2&radius=12" />
 </p>
 
-## 🟩 HackerRank — Live Stats (Auto Updated)
+## 🟩 HackerRank — Stats
 
-<!-- HACKERRANK_BADGE -->
-![HackerRank Top Badge](assets/hackerrank_badge_card.svg)
-<!-- HACKERRANK_BADGE_END -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/VishalSingh-Rajpurohit/readme/main/assets/hackerrank_topbadge.svg" width="800" />
+</p>
 
 <!-- ================= STATS SECTION ================= -->
 <h3> Contributions </h3>
