@@ -2,8 +2,13 @@
 <h3 align="center">A passionate Machine Learning developer from India</h3>
 
 <p align="left">
+  <img src="https://komarev.com/ghpvc/?username=VishalSingh-Rajpurohit&label=Profile%20views&color=0e75b6&style=flat" alt="VishalSingh-Rajpurohit" /
+</p>
+
+<p align="left">
   <img src="https://komarev.com/ghpvc/?username=VishalSingh-Rajpurohit&label=Profile%20views&color=0e75b6&style=flat" alt="VishalSingh-Rajpurohit" />
 </p>
+
 
 <p align="left">
   <a href="https://github.com/ryo-ma/github-profile-trophy">
