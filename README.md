@@ -5,7 +5,7 @@
   <img src="https://komarev.com/ghpvc/?username=VishalSingh-Rajpurohit&label=Profile%20views&color=0e75b6&style=flat" alt="VishalSingh-Rajpurohit" /
 </p>
 
-![Profile Views](https://komarev.com/ghpvc/?username=vishalsingh-rajpurohit&style=for-the-badge&color=blue)
+![Profile Views](https://komarev.com/ghpvc/?username=VishalSingh-Rajpurohit&label=Profile%20Views&color=0e75b6&style=flat)
 
 
 <p align="left">
