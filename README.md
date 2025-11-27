@@ -84,21 +84,17 @@
 
 <br>
 
-
-## 🟩 HackerRank — Live Stats (Auto Updated)
-
-<!-- HACKERRANK_BADGE -->
-<p align="left"><img src="./assets/hackerrank_card.svg" alt="HackerRank card" /></p>
-<!-- HACKERRANK_BADGE_END -->
-
-
 ## 🟩 LeetCode — Live Stats (Auto Updated)
 
 <p align="center">
   <img src="https://leetcard.jacoblin.cool/Vishal0666?theme=unicorn&font=Baloo%202&ext=contest&border=2&radius=12" />
 </p>
 
+## 🟩 HackerRank — Live Stats (Auto Updated)
 
+<!-- HACKERRANK_BADGE -->
+<p align="left"><img src="./assets/hackerrank_card.svg" alt="HackerRank card" /></p>
+<!-- HACKERRANK_BADGE_END -->
 
 <!-- ================= STATS SECTION ================= -->
 <h3> Contributions </h3>
