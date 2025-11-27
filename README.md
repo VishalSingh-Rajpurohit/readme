@@ -1,15 +1,7 @@
 <h1 align="center">Hi 👋, I'm Vishal Singh Rajpurohit</h1>
 <h3 align="center">A passionate Machine Learning developer from India</h3>
 
-<p align="left">
- <img src="https://komarev.com/ghpvc/?username=VishalSingh-Rajpurohit&label=Profile%20Views&color=0e75b6&style=flat" alt="Profile Views" />
-</p>
-
-![Profile Views](https://img.shields.io/badge/Profile%20Views-🔍%20Tracking%20Disabled-blue?style=for-the-badge)
-
 ![Profile Views](https://img.shields.io/badge/Profile%20Views-1200-blue?style=for-the-badge)
-
-
 
 <p align="left">
   <a href="https://github.com/ryo-ma/github-profile-trophy">
