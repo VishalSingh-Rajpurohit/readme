@@ -99,6 +99,10 @@
  ## 🟧 LeetCode — Live Stats (Auto Updated)
 (placeholder — replaced automatically)
 
+<p align="center">
+  <img src="https://leetcard.jacoblin.cool/Vishal0666?theme=unicorn&font=Baloo%202&ext=contest&border=2&radius=12" />
+</p>
+
 📄 **[View full LeetCode stats →](./LEETCODE_STATS.md)**
 
 <!-- ================= STATS SECTION ================= -->
