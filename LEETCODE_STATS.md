@@ -1,1 +1,12 @@
-Error parsing LeetCode API.
+# 🟧 LeetCode — Live Stats (Auto Updated)
+
+👤 **Username:** Vishal0666
+
+🏆 **Ranking:** 3771115
+💡 **Easy Solved:** 18 / 918
+🔥 **Medium Solved:** 2 / 1978
+💀 **Hard Solved:** 0 / 896
+
+🟢 Total Solved: **20**
+
+⚠ Stats fetched from public LeetCode API.
