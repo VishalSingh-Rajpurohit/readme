@@ -5,7 +5,7 @@
 🏆 **Ranking:** 3784482
 💡 **Easy Solved:** 18 / 921
 🔥 **Medium Solved:** 2 / 1982
-💀 **Hard Solved:** 0 / 898
+💀 **Hard Solved:** 0 / 899
 
 🟢 Total Solved: **20**
 
