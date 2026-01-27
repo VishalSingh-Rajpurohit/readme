@@ -2,11 +2,11 @@
 
 👤 **Username:** Vishal0666
 
-🏆 **Ranking:** 3839042
-💡 **Easy Solved:** 18 / 922
-🔥 **Medium Solved:** 2 / 1997
-💀 **Hard Solved:** 0 / 903
+🏆 **Ranking:** 0
+💡 **Easy Solved:** 0 / 0
+🔥 **Medium Solved:** 0 / 0
+💀 **Hard Solved:** 0 / 0
 
-🟢 Total Solved: **20**
+🟢 Total Solved: **0**
 
 ⚠ Stats fetched from public LeetCode API.
