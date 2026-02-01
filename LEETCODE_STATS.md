@@ -1,12 +1,1 @@
-# 🟧 LeetCode — Live Stats (Auto Updated)
-
-👤 **Username:** Vishal0666
-
-🏆 **Ranking:** 3853559
-💡 **Easy Solved:** 18 / 923
-🔥 **Medium Solved:** 2 / 1999
-💀 **Hard Solved:** 0 / 904
-
-🟢 Total Solved: **20**
-
-⚠ Stats fetched from public LeetCode API.
+Error parsing LeetCode API.
