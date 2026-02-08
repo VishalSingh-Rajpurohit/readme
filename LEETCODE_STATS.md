@@ -2,7 +2,7 @@
 
 👤 **Username:** Vishal0666
 
-🏆 **Ranking:** 3873933
+🏆 **Ranking:** 3876520
 💡 **Easy Solved:** 18 / 925
 🔥 **Medium Solved:** 2 / 2004
 💀 **Hard Solved:** 0 / 907
