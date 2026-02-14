@@ -3,9 +3,9 @@
 👤 **Username:** Vishal0666
 
 🏆 **Ranking:** 3894176
-💡 **Easy Solved:** 18 / 925
-🔥 **Medium Solved:** 2 / 2005
-💀 **Hard Solved:** 0 / 907
+💡 **Easy Solved:** 18 / 926
+🔥 **Medium Solved:** 2 / 2007
+💀 **Hard Solved:** 0 / 908
 
 🟢 Total Solved: **20**
 
